@@ -1,4 +1,4 @@
-## Neural Style Transfer
+## Generative Adversarial Networks
 
 ## Introduction
 
