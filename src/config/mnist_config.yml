@@ -1,0 +1,50 @@
+generator:
+  latent_dim: 100
+  fc_layer:
+    output_channels: 128
+    output_height: 7
+    output_width: 7
+  deconv_layer_params:
+    layer_1:
+      input_channels: 128
+      output_channels: 64
+      kernel_size: 4
+      stride: 2
+      padding: 1
+    layer_2:
+      input_channels: 64
+      output_channels: 1
+      kernel_size: 4
+      stride: 2
+      padding: 1
+discriminator:
+  conv_layer_params:
+    layer_1:
+      input_channels: 1
+      output_channels: 64
+      kernel_size: 4
+      stride: 2
+      padding: 1
+    layer_2:
+      input_channels: 64
+      output_channels: 128
+      kernel_size: 4
+      stride: 2
+      padding: 1
+  fc_layer:
+    input_channels: 6272
+trainer:
+  output_dir: /home/ubuntu/generative-adversarial-networks/src/output
+  experiment: mnist
+  k: 5
+  batch_size: 64
+  lrs:
+    lr_gen: 0.0001
+    lr_disc: 0.0001
+  betas:
+    betas_gen: [0, 0.9]
+    betas_disc: [0, 0.9]
+  iterations: 100000
+  log_steps: 500
+  ckpt_steps: 5000
+  ckpt_dir: ckpt
