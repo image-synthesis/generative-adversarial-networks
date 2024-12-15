@@ -2,3 +2,6 @@ data/
 
 *.png
 *.pt
+*.pyc
+
+gan.egg-info/*
